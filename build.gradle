@@ -8,13 +8,6 @@ buildscript {
         mavenCentral()
         jcenter()
     }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
-        classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
-        classpath("org.jetbrains.kotlin:kotlin-noarg:${kotlinVersion}")
-        classpath "io.spring.gradle:dependency-management-plugin:1.0.6.RELEASE"
-    }
 }
 
 plugins {
@@ -28,9 +21,6 @@ plugins {
 
 apply plugin: 'kotlin'
 apply plugin: 'kotlin-spring'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
-apply plugin: "kotlin-jpa"
 
 allOpen {
     annotation("javax.persistence.Entity")
@@ -39,7 +29,7 @@ allOpen {
 }
 
 group = "com.netsensia.rivalchess"
-version = '23.0.0'
+version = '24.0.0'
 jar.baseName("rivalchess-vie-utils")
 
 publishing {
@@ -47,7 +37,7 @@ publishing {
         maven(MavenPublication) {
             groupId = "$group"
             artifactId = "${jar.baseName}"
-            version = '23.0.0'
+            version = '24.0.0'
             from components.java
         }
     }
@@ -117,9 +107,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     
     compile 'org.apache.activemq:activemq-core:5.4.3'
-    compile('org.springframework.boot:spring-boot-starter-data-jpa')
-
-    compile("org.jetbrains.kotlin:kotlin-reflect")
 
     implementation 'com.amazonaws:aws-java-sdk-s3:1.11.7'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
