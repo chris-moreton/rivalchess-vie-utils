@@ -14,7 +14,7 @@ object JmsSender {
 
     @Throws(JMSException::class)
     @JvmStatic
-    fun send(subject: String, message: MatchResult) {
+    fun send(subject: String, message: Any) {
         val connectionFactory = ActiveMQConnectionFactory(url)
         connectionFactory.userName = user
         connectionFactory.password = pass
