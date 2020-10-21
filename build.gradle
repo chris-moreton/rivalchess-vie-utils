@@ -19,7 +19,6 @@ plugins {
 }
 
 apply plugin: 'kotlin'
-apply plugin: 'kotlin-spring'
 
 group = "com.netsensia.rivalchess"
 version = '25.0.0'
