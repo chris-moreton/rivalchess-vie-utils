@@ -90,10 +90,10 @@ repositories {
 dependencies {
     testImplementation 'junit:junit:4.12'
     implementation 'org.springframework:spring-jms:5.2.9.RELEASE'
-    implementation 'org.apache.activemq:activemq-broker:5.16.0'
-    implementation 'org.apache.activemq:activemq-client:5.16.0'
-    implementation 'org.apache.activemq:activemq-core:5.16.0'
-    implementation 'org.apache.activemq:activemq-kahadb-store:5.16.0'
+    implementation 'org.apache.activemq:activemq-broker'
+    implementation 'org.apache.activemq:activemq-client'
+    implementation 'org.apache.activemq:activemq-core'
+    implementation 'org.apache.activemq:activemq-kahadb-store'
     implementation 'com.amazonaws:aws-java-sdk-s3:1.11.7'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     implementation "com.fasterxml.jackson.module:jackson-module-kotlin:2.11.+"
