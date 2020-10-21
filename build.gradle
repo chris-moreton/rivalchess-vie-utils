@@ -2,20 +2,23 @@ buildscript {
     ext {
         kotlinVersion = '1.4.10'
         springBootVersion = '2.1.0.RELEASE'
-        h2 = '1.4.196'
     }
     repositories {
+        mavenLocal()
         mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
         classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
         classpath("org.jetbrains.kotlin:kotlin-noarg:${kotlinVersion}")
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.6.RELEASE"
     }
 }
 
 plugins {
+    id 'java'
     id 'maven'
     id 'maven-publish'
     id 'signing'
@@ -36,7 +39,7 @@ allOpen {
 }
 
 group = "com.netsensia.rivalchess"
-version = '21.0.0'
+version = '22.0.0'
 jar.baseName("rivalchess-vie-utils")
 
 publishing {
@@ -44,7 +47,7 @@ publishing {
         maven(MavenPublication) {
             groupId = "$group"
             artifactId = "${jar.baseName}"
-            version = '21.0.0'
+            version = '22.0.0'
             from components.java
         }
     }
@@ -107,6 +110,7 @@ uploadArchives {
 repositories {
     mavenLocal()
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
