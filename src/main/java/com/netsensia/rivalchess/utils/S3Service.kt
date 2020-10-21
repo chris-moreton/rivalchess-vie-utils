@@ -29,6 +29,12 @@ fun getEngine(
     }
 }
 
+fun getEngines(engine1: String, engine2: String) {
+    val client = getS3Client()
+    getEngine(client, engine1)
+    getEngine(client, engine2)
+}
+
 fun getS3Client(): AmazonS3Client {
     val credentials = BasicAWSCredentials(accessKey, secretKey)
 
