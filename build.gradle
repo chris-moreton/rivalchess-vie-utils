@@ -13,7 +13,7 @@ plugins {
 }
 
 group = "com.netsensia.rivalchess"
-version = '3.0.0'
+version = '4.0.0'
 jar.baseName("rivalchess-vie-utils")
 
 publishing {
@@ -21,7 +21,7 @@ publishing {
         maven(MavenPublication) {
             groupId = "$group"
             artifactId = "${jar.baseName}"
-            version = '3.0.0'
+            version = '4.0.0'
 
             from components.java
         }
@@ -89,7 +89,6 @@ repositories {
 
 dependencies {
     testImplementation 'junit:junit:4.12'
-    compile 'org.apache.activemq:activemq-all:5.12.0'
     compile 'org.springframework:spring-jms:5.2.9.RELEASE'
     compile 'com.amazonaws:aws-java-sdk-s3:1.11.7'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
