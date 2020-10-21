@@ -1,4 +1,4 @@
-package com.netsensia.rivalchess.service
+package com.netsensia.rivalchess.utils
 
 import com.google.gson.Gson
 import com.netsensia.rivalchess.vie.model.MatchResult

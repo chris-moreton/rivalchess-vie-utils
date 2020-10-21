@@ -1,4 +1,4 @@
-package com.netsensia.rivalchess.service
+package com.netsensia.rivalchess.utils
 
 import org.apache.activemq.ActiveMQConnectionFactory
 import javax.jms.*

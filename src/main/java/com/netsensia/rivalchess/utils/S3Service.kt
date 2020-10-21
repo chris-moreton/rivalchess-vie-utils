@@ -1,4 +1,4 @@
-package com.netsensia.rivalchess.service
+package com.netsensia.rivalchess.utils
 
 import com.amazonaws.auth.BasicAWSCredentials
 import com.amazonaws.services.s3.AmazonS3Client
@@ -16,7 +16,7 @@ fun getS3Client(): AmazonS3Client {
 
     return AmazonS3Client(credentials).apply {
         setEndpoint(endpoint).apply {
-            println("S3 endpoint is ${endpoint}")
+            println("S3 endpoint is $endpoint")
         }
         setS3ClientOptions(S3ClientOptions.builder().setPathStyleAccess(true).build())
     }
