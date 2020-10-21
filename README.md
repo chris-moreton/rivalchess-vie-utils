@@ -10,10 +10,10 @@ Reads messages from the Rival queue, plays the requested matches and posts the r
     <dependency>
         <groupId>com.netsensia.rivalchess</groupId>
         <artifactId>rivalchess-vie-utils</artifactId>
-        <version>'13.0.0'</version>
+        <version>'14.0.0'</version>
     </dependency>
     
 #### Gradle
 
-    compile group: 'com.netsensia.rivalchess', name: 'rivalchess-vie-utils', version: '13.0.0'
+    compile group: 'com.netsensia.rivalchess', name: 'rivalchess-vie-utils', version: '14.0.0'
 

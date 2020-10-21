@@ -13,7 +13,7 @@ plugins {
 }
 
 group = "com.netsensia.rivalchess"
-version = '13.0.0'
+version = '14.0.0'
 jar.baseName("rivalchess-vie-utils")
 
 publishing {
@@ -21,7 +21,7 @@ publishing {
         maven(MavenPublication) {
             groupId = "$group"
             artifactId = "${jar.baseName}"
-            version = '13.0.0'
+            version = '14.0.0'
 
             from components.java
         }
@@ -92,10 +92,6 @@ dependencies {
 
     implementation('org.springframework:spring-jms:5.2.9.RELEASE') {
         exclude group: "spring-boot-starter-log4j2"
-    }
-
-    compile('ch.qos.logback:logback-classic:1.1.7') {
-        exclude group: 'org.slf4j', module: 'slf4j-api' //by both name and group
     }
     
     compile group: 'org.apache.activemq', name: 'activemq-all', version: '5.16.0'
