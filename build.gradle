@@ -13,7 +13,7 @@ plugins {
 }
 
 group = "com.netsensia.rivalchess"
-version = '9.0.0'
+version = '10.0.0'
 jar.baseName("rivalchess-vie-utils")
 
 publishing {
@@ -21,7 +21,7 @@ publishing {
         maven(MavenPublication) {
             groupId = "$group"
             artifactId = "${jar.baseName}"
-            version = '9.0.0'
+            version = '10.0.0'
 
             from components.java
         }
@@ -90,6 +90,8 @@ repositories {
 dependencies {
     testImplementation 'junit:junit:4.12'
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+
+    implementation 'org.springframework:spring-jms:5.2.9.RELEASE'
 
     compile group: 'org.apache.activemq', name: 'activemq-broker', version: '5.16.0'
     compile group: 'org.apache.activemq', name: 'activemq-client', version: '5.16.0'
