@@ -11,30 +11,6 @@ val accessKey = System.getenv("AWS_ACCESS_KEY_ID")
 val secretKey = System.getenv("AWS_SECRET_ACCESS_KEY")
 val endpoint = System.getenv("S3_ENDPOINT")
 
-fun getEngine(
-        s3Client: AmazonS3Client,
-        engineVersion: String
-) {
-    val s3Name = "rivalchess-${engineVersion}-1.jar"
-    val filePath = "/tmp/$s3Name"
-
-    if (File(filePath).exists()) {
-        println("$s3Name already exists")
-    } else {
-        println("Getting engine $engineVersion from S3")
-        val o = s3Client.getObject(GetObjectRequest("rivalchess-jars", s3Name))
-        val objectData: InputStream = o.objectContent
-        File(filePath).writeBytes(objectData.readBytes())
-        objectData.close()
-    }
-}
-
-fun getEngines(engine1: String, engine2: String) {
-    val client = getS3Client()
-    getEngine(client, engine1)
-    getEngine(client, engine2)
-}
-
 fun getS3Client(): AmazonS3Client {
     val credentials = BasicAWSCredentials(accessKey, secretKey)
 
@@ -45,3 +21,23 @@ fun getS3Client(): AmazonS3Client {
         setS3ClientOptions(S3ClientOptions.builder().setPathStyleAccess(true).build())
     }
 }
+
+fun getFile(
+        bucket: String,
+        fileName: String,
+        destPath: String
+) {
+    val s3Client = getS3Client()
+
+    if (File(destPath).exists()) {
+        println("$destPath already exists")
+    } else {
+        println("Getting $fileName from S3")
+        val o = s3Client.getObject(GetObjectRequest(bucket, fileName))
+        val objectData: InputStream = o.objectContent
+        File(destPath).writeBytes(objectData.readBytes())
+        objectData.close()
+    }
+}
+
+
