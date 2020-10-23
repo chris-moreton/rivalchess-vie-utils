@@ -27,6 +27,7 @@ object JmsReceiver {
         val message = consumer.receive()
 
         connection.close()
+        println("Event received $subject, $message")
 
         if (message is TextMessage) {
             return message.text

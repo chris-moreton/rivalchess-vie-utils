@@ -31,7 +31,7 @@ object JmsSender {
         val sessionMessage = session.createTextMessage(gson.toJson(message))
 
         producer.send(sessionMessage)
-        println("JCG printing@@ '" + sessionMessage.text + "'")
+        println("Event sent $subject, JCG printing@@ '" + sessionMessage.text + "'")
         connection.close()
     }
 }
