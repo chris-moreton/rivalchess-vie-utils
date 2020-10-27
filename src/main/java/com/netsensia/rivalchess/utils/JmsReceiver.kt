@@ -24,6 +24,7 @@ object JmsReceiver {
 
         val consumer = session.createConsumer(destination)
 
+        println("Waiting for $subject message")
         val message = consumer.receive()
 
         connection.close()
