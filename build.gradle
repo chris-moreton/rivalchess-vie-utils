@@ -104,7 +104,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     implementation "com.fasterxml.jackson.module:jackson-module-kotlin:2.11.+"
     implementation 'com.google.code.gson:gson:2.8.2'
-    implementation 'com.netsensia.rivalchess:rivalchess-vie-model:3.0.0'
+    implementation 'com.netsensia.rivalchess:rivalchess-vie-model:4.0.0'
 }
 
 test {
