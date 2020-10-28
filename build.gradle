@@ -21,7 +21,7 @@ plugins {
 apply plugin: 'kotlin'
 
 group = "com.netsensia.rivalchess"
-version = '25.0.8'
+version = '25.0.9'
 jar.baseName("rivalchess-vie-utils")
 
 publishing {
@@ -29,7 +29,7 @@ publishing {
         maven(MavenPublication) {
             groupId = "$group"
             artifactId = "${jar.baseName}"
-            version = '25.0.8'
+            version = '25.0.9'
             from components.java
         }
     }
@@ -41,7 +41,6 @@ task sourcesJar(type: Jar) {
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
     from tasks.javadoc.destinationDir
-
 }
 
 artifacts {
