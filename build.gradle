@@ -21,7 +21,7 @@ plugins {
 apply plugin: 'kotlin'
 
 group = "com.netsensia.rivalchess"
-version = '25.0.9'
+version = '25.0.10'
 jar.baseName("rivalchess-vie-utils")
 
 publishing {
@@ -29,7 +29,7 @@ publishing {
         maven(MavenPublication) {
             groupId = "$group"
             artifactId = "${jar.baseName}"
-            version = '25.0.9'
+            version = '25.0.10'
             from components.java
         }
     }
@@ -107,7 +107,7 @@ dependencies {
 
     implementation 'com.amazonaws:aws-java-sdk-s3:1.11.7'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-    implementation "com.fasterxml.jackson.module:jackson-module-kotlin:2.11.+"
+    implementation "com.fasterxml.jackson.module:jackson-module-kotlin:2.11.3"
     implementation 'com.google.code.gson:gson:2.8.2'
     implementation 'com.netsensia.rivalchess:rivalchess-vie-model:4.0.0'
 }
