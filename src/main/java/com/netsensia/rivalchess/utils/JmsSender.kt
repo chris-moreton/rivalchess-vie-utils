@@ -1,14 +1,11 @@
 package com.netsensia.rivalchess.utils
 
 import com.google.gson.Gson
+import com.netsensia.rivalchess.utils.`interface`.JmsSenderInterface
 import org.apache.activemq.ActiveMQConnectionFactory
 import javax.jms.Destination
 import javax.jms.JMSException
 import javax.jms.Session
-
-interface JmsSenderInterface {
-    fun send(subject: String, message: Any)
-}
 
 object JmsSender : JmsSenderInterface {
     private val url = System.getenv("ACTIVE_MQ_URL")
