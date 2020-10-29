@@ -1,20 +1,22 @@
 package com.netsensia.rivalchess.utils
 
 import com.google.gson.Gson
-import com.netsensia.rivalchess.vie.model.MatchResult
 import org.apache.activemq.ActiveMQConnectionFactory
 import javax.jms.Destination
 import javax.jms.JMSException
 import javax.jms.Session
 
-object JmsSender {
+interface JmsSenderInterface {
+    fun send(subject: String, message: Any)
+}
+
+object JmsSender : JmsSenderInterface {
     private val url = System.getenv("ACTIVE_MQ_URL")
     private val user = System.getenv("ACTIVE_MQ_USER")
     private val pass = System.getenv("ACTIVE_MQ_PASSWORD")
 
     @Throws(JMSException::class)
-    @JvmStatic
-    fun send(subject: String, message: Any) {
+    override fun send(subject: String, message: Any) {
         val connectionFactory = ActiveMQConnectionFactory(url)
         connectionFactory.userName = user
         connectionFactory.password = pass
