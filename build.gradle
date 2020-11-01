@@ -21,7 +21,7 @@ plugins {
 apply plugin: 'kotlin'
 
 group = "com.netsensia.rivalchess"
-version = '27.0.0'
+version = '27.0.1'
 jar.baseName("rivalchess-vie-utils")
 
 publishing {
@@ -29,7 +29,7 @@ publishing {
         maven(MavenPublication) {
             groupId = "$group"
             artifactId = "${jar.baseName}"
-            version = '27.0.0'
+            version = '27.0.1'
             from components.java
         }
     }
