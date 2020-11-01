@@ -50,12 +50,10 @@ class JmsService: JmsServiceInterface {
     }
 
     private fun getSession(): Session {
-        if (connection == null) {
-            val connectionFactory = ActiveMQConnectionFactory(url)
-            connectionFactory.userName = user
-            connectionFactory.password = pass
-            connection = connectionFactory.createConnection()
-        }
+        val connectionFactory = ActiveMQConnectionFactory(url)
+        connectionFactory.userName = user
+        connectionFactory.password = pass
+        connection = connectionFactory.createConnection()
         connection!!.start()
         return connection!!.createSession(false, Session.AUTO_ACKNOWLEDGE)
     }
