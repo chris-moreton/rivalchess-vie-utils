@@ -1,6 +1,5 @@
 package com.netsensia.rivalchess.utils.mock
 
-import com.netsensia.rivalchess.utils.`interface`.JmsSenderInterface
 import com.netsensia.rivalchess.vie.model.EngineMatch
 
 object MockJmsSender : JmsSenderInterface {
